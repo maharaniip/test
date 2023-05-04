@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="test.list">
+            <field name="name">test list</field>
+            <field name="model">material.material</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="test.form">
+            <field name="name">test form</field>
+            <field name="model">material.material</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="type"/>
+                            <field name="price"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="material_view_search" model="ir.ui.view">
+            <field name="name">material.material.search</field>
+            <field name="model">material.material</field>
+            <field name="priority" eval="15"/>
+            <field name="arch" type="xml">
+                <search string="Materials Filter">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="type"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="test.action_window">
+            <field name="name">test window</field>
+            <field name="res_model">material.material</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu item -->
+        <menuitem name="Materials" id="test.menu_root"/>
+
+        <!-- menu categories -->
+        <menuitem name="Menu 1" id="test.menu_1" parent="test.menu_root" action="test.action_window"/>
+        <!--    <menuitem name="Menu 2" id="test.menu_2" parent="test.menu_root"/>-->
+
+    </data>
+</odoo>
