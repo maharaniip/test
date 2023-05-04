@@ -15,6 +15,7 @@ class testModul(models.Model):
         ('Cotton', 'Cotton')
     ], required=True)
     price = fields.Integer(string='Buy Price', required=True)
+    supplier_id = fields.Many2one('res.partner', required=True)
 
     @api.model
     def create(self, vals):

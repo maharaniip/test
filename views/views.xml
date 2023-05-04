@@ -10,6 +10,8 @@
                     <field name="name"/>
                     <field name="type"/>
                     <field name="price"/>
+                    <field name="supplier_id"/>
+
                 </tree>
             </field>
         </record>
@@ -25,6 +27,7 @@
                             <field name="name"/>
                             <field name="type"/>
                             <field name="price"/>
+                            <field name="supplier_id"/>
                         </group>
                     </sheet>
                 </form>
